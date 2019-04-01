@@ -34,5 +34,10 @@ textarea {
     background-color: #d41d50;
     color: white;
     width: 60px;
-    borfer-radius: 8px;
+    border-radius: 8px;
+}
+.course > li .details{
+    position: absolute;
+    top:0;
+    left: 70px;
 }
