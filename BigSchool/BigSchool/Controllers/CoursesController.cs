@@ -8,36 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace BigSchool.Controllers
-{   
+{
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-       
+        // GET: Courses
         public CoursesController()
         {
             _dbContext = new ApplicationDbContext();
-        }
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(CoursesViewModel viewModel)
-        {
-            if(!ModelState.IsValid)
-            {
-                viewModel.Categories = _dbContext.Categories.ToList();
-                return View("Create", viewModel);
-            }
-            var course = new Course
-            {
-                LecturerId = User.Identity.GetUserId(),
-                DateTime = viewModel.GetDateTime(),
-                CategoryId = viewModel.Category,
-                Place = viewModel.Place
-            };
-            _dbContext.Courses.Add(course);
-            _dbContext.SaveChanges();
-
-            return RedirectToAction("Index", "Home");
         }
         // GET: Courses
         public ActionResult Create()
@@ -47,6 +25,22 @@ namespace BigSchool.Controllers
                 Categories = _dbContext.Categories.ToList()
             };
             return View(viewModel);
+        }
+        // GET: Courses
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create(CoursesViewModel viewModel)
+        {
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                DateTime = viewModel.GetDateTime(),
+                CategoryId = viewModel.Category,
+                Place = viewModel.Place
+            };
+            _dbContext.Courses.Add(course);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

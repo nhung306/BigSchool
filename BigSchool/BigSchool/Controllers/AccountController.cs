@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BigSchool.Models;
+using System.Data.Entity;
 
 namespace BigSchool.Controllers
 {
@@ -70,8 +71,8 @@ namespace BigSchool.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
-            }
+               return View(model);
+           }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -151,7 +152,7 @@ namespace BigSchool.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
