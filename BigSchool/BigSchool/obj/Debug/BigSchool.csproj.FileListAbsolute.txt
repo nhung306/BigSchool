@@ -177,3 +177,12 @@ C:\Users\Administrator\Source\Repos\BigSchool\BigSchool\BigSchool\bin\System.Web
 C:\Users\Administrator\Source\Repos\BigSchool\BigSchool\BigSchool\bin\System.Net.Http.Formatting.xml
 C:\Users\Administrator\Source\Repos\BigSchool\BigSchool\BigSchool\bin\System.Web.Http.xml
 C:\Users\Administrator\Source\Repos\BigSchool\BigSchool\BigSchool\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddNameColumnToApplicationUser.resources
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddAttendance.resources
+C:\Users\Administrator\Desktop\bigschool\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddFollowingsTable.resources

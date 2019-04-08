@@ -16,6 +16,7 @@ namespace BigSchool.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+        public DbSet<Following> Followings { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -30,6 +31,16 @@ namespace BigSchool.Models
             modelBuilder.Entity<Attendance>()
                 .HasRequired(a => a.Course)
                 .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.Followers)
+                .WithRequired(f => f.Followee)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(a => a.Followees)
+                .WithRequired(f=>f.Follower)
                 .WillCascadeOnDelete(false);
             base.OnModelCreating(modelBuilder);
         }
